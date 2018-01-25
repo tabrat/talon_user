@@ -1,10 +1,11 @@
 from talon.voice import Word, Key, Context
 
 terminals = ('com.apple.Terminal', 'com.googlecode.iterm2')
-ctx = Context('terminal', func=lambda app, win: any(t in app.bundle for t in terminals))
+ctx = Context('terminal', func=lambda app, win: any(
+    t in app.bundle for t in terminals))
 
 keymap = {
-	'cd': 'cd ',
+    'cd': 'cd ',
     '(ls | run ellis | run alice)': 'ls\n',
     'run make (durr | dear)': 'mkdir ',
     'run jet': 'git ',
@@ -18,4 +19,6 @@ keymap = {
 }
 
 ctx.keymap(keymap)
+
+
 def unload(): ctx.unload()

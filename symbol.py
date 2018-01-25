@@ -14,10 +14,14 @@ keymap = {
     '(semi | semicolon | sunk)': ';',
     'colon': ':',
 
-    '(square | left square [bracket] | brackorp)': '[', '(rsquare | are square | right square [bracket] | brackose)': ']',
-    '(paren | left paren)': '(', '(rparen | are paren | right paren)': ')',
-    '(brace | left brace | kirksorp)': '{', '(rbrace | are brace | right brace | kirkos)': '}',
-    '(angle | left angle | less than)': '<', '(rangle | are angle | right angle | greater than)': '>',
+    '(square | left square [bracket] | brackorp)': '[',
+    '(rsquare | are square | right square [bracket] | brackose)': ']',
+    '(paren | left paren)': '(',
+    '(rparen | are paren | right paren)': ')',
+    '(brace | left brace | kirksorp)': '{',
+    '(rbrace | are brace | right brace | kirkos)': '}',
+    '(angle | left angle | less than)': '<',
+    '(rangle | are angle | right angle | greater than)': '>',
 
     '(star | asterisk)': '*',
     '(pound | hash [sign] | octo | thorpe | number sign)': '#',
@@ -32,8 +36,8 @@ keymap = {
     'triple quote': "'''",
     '(dot | period)': '.',
     'comma': ',',
-    'swipe': ', ', 
-    'coalgap': ': ', 
+    'swipe': ', ',
+    'coalgap': ': ',
     '(space | skoosh)': ' ',
     '[forward] slash': '/',
     'backslash': '\\',
@@ -41,10 +45,12 @@ keymap = {
     '(dot dot | dotdot | doodle)': '..',
     '(enter | shock)': Key('enter'),
     '(delete | junk)': Key('backspace'),
-    'spunk': Key('delete'), 
+    'spunk': Key('delete'),
 
     'equals': '=',
 }
 
 ctx.keymap(keymap)
+
+
 def unload(): ctx.unload()

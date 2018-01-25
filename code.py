@@ -2,28 +2,31 @@ from talon.voice import Context, Key
 
 languages = ('.php', '.py', '.java')
 bundles = ('com.postmanlabs.mac')
-ctx = Context('code', func=lambda app, win: any(l in win.title for l in languages) or any(b in app.bundle for b in bundles))
+ctx = Context('code', func=lambda app, win:
+              any(l in win.title for l in languages)
+              or any(b in app.bundle for b in bundles)
+              )
 
 keymap = {
-	'sinker': [Key('cmd-right ;')],
+    'sinker': [Key('cmd-right ;')],
 
     'args': ['()', Key('left')],
-    'angler': ['<>', Key('left')], 
+    'angler': ['<>', Key('left')],
     '(block | kirblock)': ['{}', Key('left enter')],
     'args-block': ['(', Key('enter')],
     'brax-block': ['[', Key('enter')],
 
     'coalshock': [':', Key('enter')],
-    'coal twice': '::', 
-    'ellipsis': '...', 
-    'mintwice': '--', 
-    'plustwice': '++', 
+    'coal twice': '::',
+    'ellipsis': '...',
+    'mintwice': '--',
+    'plustwice': '++',
 
     '(indirect | reference)': '&',
     '([is] equal to | longqual)': ' == ',
     '([is] not equal to | banquall)': ' != ',
     'trickle': ' === ',
-    '(ranqual | nockle)': ' !== ', 
+    '(ranqual | nockle)': ' !== ',
     '(call | prekris)': '()',
 
     '(index | brax)': ['[]', Key('left')],
@@ -34,11 +37,11 @@ keymap = {
     'minquall': '-=',
     'pluqual': '+=',
     'starqual': '*=',
-    'lessqual': ' <= ', 
-    'grayqual': ' >= ', 
+    'lessqual': ' <= ',
+    'grayqual': ' >= ',
 
-	'(arrow | lambo)': '->',
-    'shrocket': ' => ', 
+    '(arrow | lambo)': '->',
+    'shrocket': ' => ',
 
     'state if': ['if ()', Key('left')],
     'state else': ['else ()', Key('left')],
@@ -59,4 +62,6 @@ keymap = {
 }
 
 ctx.keymap(keymap)
+
+
 def unload(): ctx.unload()
