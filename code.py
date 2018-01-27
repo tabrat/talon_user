@@ -4,9 +4,9 @@ languages = ['.php', '.py', '.java']
 bundles = ['com.postmanlabs.mac']
 
 ctx = Context('code', func=lambda app, win:
-    any(app.bundle == b for b in bundles)
-    or any(win.doc.endswith(l) for l in languages)
-    )
+              any(app.bundle == b for b in bundles)
+              or any(win.doc.endswith(l) for l in languages)
+              )
 
 keymap = {
     'sinker': [Key('cmd-right ;')],

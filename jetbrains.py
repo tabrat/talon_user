@@ -19,7 +19,7 @@ keymap = {
     'neck method': Key('ctrl-down'),
     'refactor': Key('shift-f6'),
     'generate': Key('cmd-n'),
-    'recent': Key('cmd-e'), 
+    'recent': Key('cmd-e'),
 }
 
 ctx.keymap(keymap)

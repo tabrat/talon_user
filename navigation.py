@@ -27,7 +27,7 @@ keymap = {
     'kite': Key('alt-delete'),
     'snipple': Key('cmd-shift-left delete'),
     'snipper': Key('cmd-shift-right delete'),
-    'slurp': Key('backspace delete'), 
+    'slurp': Key('backspace delete'),
     'slurpies': Key('alt-backspace alt-delete'),
 
     # moving
@@ -68,4 +68,3 @@ ctx.keymap(keymap)
 
 
 def unload(): ctx.unload()
-
