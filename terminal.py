@@ -1,4 +1,5 @@
-from talon.voice import Word, Key, Context
+from talon.voice import Word, Key, Context, Str
+import string
 
 terminals = ('com.apple.Terminal', 'com.googlecode.iterm2')
 ctx = Context('terminal', func=lambda app, win: any(
@@ -18,6 +19,10 @@ keymap = {
     'run jet pull': 'git pull ',
     'run jet status': 'git status ',
     'run jet add': 'git add ',
+
+    # would require to symlink sublime -
+    # http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
+    'sublime open': Str('sublime .'),
 }
 
 ctx.keymap(keymap)

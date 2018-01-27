@@ -18,6 +18,8 @@ keymap = {
     '(last tab | gopreev)': Key('ctrl-shift-tab'),
     'next space': Key('cmd-alt-ctrl-right'),
     'last space': Key('cmd-alt-ctrl-left'),
+    '(baxley | go back)': Key('cmd-alt-left'),
+    '(fourthly | go forward)': Key('cmd-alt-right'),
 
     # deleting
     'snipline': Key('cmd-right cmd-backspace'),
