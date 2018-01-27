@@ -1,6 +1,6 @@
 from talon.voice import Context, Key
 
-ctx = Context('php', func=lambda app, win: '.php' in win.title)
+ctx = Context('php', func=lambda app, win: win.doc.endswith('.php'))
 
 keymap = {
     'comment see': '// ',
@@ -12,6 +12,7 @@ keymap = {
     'state super': 'parent::',
     'state self': 'self::',
     'state jason': 'json',
+    'state jason response': 'JsonResponse::',
     'state sequence': 'Seq',
     'state universe': 'Uuid',
     'state dump': ['dump();', Key('left left')],

@@ -1,6 +1,6 @@
 from talon.voice import Context, Key
 
-ctx = Context('python', func=lambda app, win: '.py' in win.title)
+ctx = Context('python', func=lambda app, win: win.doc.endswith('.py'))
 
 keymap = {
     'state any': ['any()', Key('left')],

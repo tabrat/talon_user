@@ -1,11 +1,12 @@
 from talon.voice import Context, Key
 
-languages = ('.php', '.py', '.java')
-bundles = ('com.postmanlabs.mac')
+languages = ['.php', '.py', '.java']
+bundles = ['com.postmanlabs.mac']
+
 ctx = Context('code', func=lambda app, win:
-              any(l in win.title for l in languages)
-              or any(b in app.bundle for b in bundles)
-              )
+    any(app.bundle == b for b in bundles)
+    or any(win.doc.endswith(l) for l in languages)
+    )
 
 keymap = {
     'sinker': [Key('cmd-right ;')],
@@ -44,7 +45,7 @@ keymap = {
     'shrocket': ' => ',
 
     'state if': ['if ()', Key('left')],
-    'state else': ['else ()', Key('left')],
+    'state else': ['else {}', Key('left enter')],
     'state else if': ['else if ()', Key('left')],
     'state while': ['while ()', Key('left')],
     'state for': ['for ()', Key('left')],

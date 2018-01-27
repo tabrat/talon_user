@@ -1,6 +1,6 @@
 from talon.voice import Context, Key
 
-ctx = Context('java', func=lambda app, win: '.java' in win.title)
+ctx = Context('java', func=lambda app, win: win.doc.endswith('.java'))
 
 keymap = {
     'state this': 'this.',

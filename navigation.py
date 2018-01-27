@@ -3,6 +3,10 @@ from talon.voice import Context, Key
 ctx = Context('navigation')
 
 keymap = {
+    # Requires activation of System Preferences -> Shortcuts -> Input Sources
+    # -> "Select the previous input source"
+    'change language': Key('ctrl-space'),
+
     # Application navigation
     'swick': Key('cmd-tab'),
     'totch': Key('cmd-w'),
@@ -16,16 +20,18 @@ keymap = {
     'last space': Key('cmd-alt-ctrl-left'),
 
     # deleting
-    'snipline': [Key('cmd-right cmd-backspace')],
-    'steffi': [Key('alt-ctrl-backspace')],
-    'stippy': [Key('alt-ctrl-delete')],
-    'carmex': [Key('alt-backspace')],
-    'kite': [Key('alt-delete')],
+    'snipline': Key('cmd-right cmd-backspace'),
+    'steffi': Key('alt-ctrl-backspace'),
+    'stippy': Key('alt-ctrl-delete'),
+    'carmex': Key('alt-backspace'),
+    'kite': Key('alt-delete'),
     'snipple': Key('cmd-shift-left delete'),
     'snipper': Key('cmd-shift-right delete'),
+    'slurp': Key('backspace delete'), 
+    'slurpies': Key('alt-backspace alt-delete'),
 
     # moving
-    '(tab | tarp)':   Key('tab'),
+    '(tab | tarp)': Key('tab'),
     'tarsh': Key('shift-tab'),
     'slap': [Key('cmd-right enter')],
     'shocker': [Key('cmd-left enter up')],
@@ -62,3 +68,4 @@ ctx.keymap(keymap)
 
 
 def unload(): ctx.unload()
+

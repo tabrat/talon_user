@@ -8,6 +8,8 @@ keymap = {
     'cd': 'cd ',
     '(ls | run ellis | run alice)': 'ls\n',
     'run make (durr | dear)': 'mkdir ',
+    '[go] parent': 'cd ..\n', 
+    'go back': 'cd -\n', 
     'run jet': 'git ',
     'run jet clone': 'git clone ',
     'run jet diff': 'git diff ',

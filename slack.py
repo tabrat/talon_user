@@ -1,6 +1,4 @@
-from talon.voice import Word, Context, Key, Rep, Str, press
-from talon import ctrl
-import string
+from talon.voice import Context, Key
 
 ctx = Context('slack', bundle='com.tinyspeck.slackmacgap')
 
