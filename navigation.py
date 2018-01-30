@@ -13,13 +13,15 @@ keymap = {
     'new window': Key('cmd-n'),
     '(next window | gibby)': Key('cmd-`'),
     '(last window | shibby)': Key('cmd-shift-`'),
-    '(new tab | peach)': Key('cmd-t'),
     '(next tab | goneck)': Key('ctrl-tab'),
     '(last tab | gopreev)': Key('ctrl-shift-tab'),
     'next space': Key('cmd-alt-ctrl-right'),
     'last space': Key('cmd-alt-ctrl-left'),
-    '(baxley | go back)': Key('cmd-alt-left'),
-    '(fourthly | go forward)': Key('cmd-alt-right'),
+
+    # Following three commands should be application specific
+    #'(baxley | go back)': Key('cmd-alt-left'),
+    #'(fourthly | go forward)': Key('cmd-alt-right'),
+    # '(new tab | peach)': Key('cmd-t'),
 
     # deleting
     'snipline': Key('cmd-right cmd-backspace'),
