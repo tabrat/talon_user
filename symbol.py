@@ -51,6 +51,3 @@ keymap = {
 }
 
 ctx.keymap(keymap)
-
-
-def unload(): ctx.unload()

@@ -44,7 +44,6 @@ def word(m):
     words = [parse_word(word) for word in tmp]
     Str(' '.join(words))(None)
 
-
 def surround(by):
     def func(i, word, last):
         if i == 0:

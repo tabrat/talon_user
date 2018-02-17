@@ -6,11 +6,8 @@ keymap = {
     'channel': Key('cmd-k'),
     'channel up': Key('alt-up'),
     'channel down': Key('alt-down'),
-    'highlight command': ['``', Key('left')],
-    'highlight code': ['``````', Key('left left left')],
+    '(highlight command | insert command)': ['``', Key('left')],
+    '(highlight code | insert code)': ['``````', Key('left left left')],
 }
 
 ctx.keymap(keymap)
-
-
-def unload(): ctx.unload()

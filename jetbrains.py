@@ -7,6 +7,11 @@ ctx = Context('phpstorm', func=lambda app, win: any(
 keymap = {
     'comment declaration': ['/**', Key('space')],
     'comment block': ['/**', Key('enter')],
+    # annotation command
+
+    '(next tab | goneck)': Key('cmd-shift-['),
+    '(last tab | gopreev)': Key('cmd-shift-]'),
+    'last file': Key('ctrl-tab'),
 
     'jolt': Key('cmd-d'),
     'comply': Key('tab'),
@@ -20,9 +25,9 @@ keymap = {
     'refactor': Key('shift-f6'),
     'generate': Key('cmd-n'),
     'recent': Key('cmd-e'),
+    'trundle': Key('cmd-/'),
+    '(fix imports | remove unused imports)': Key('ctrl-alt-o'),
+    'complete [statement]': Key('cmd-shift-enter'),
 }
 
 ctx.keymap(keymap)
-
-
-def unload(): ctx.unload()

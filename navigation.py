@@ -13,8 +13,6 @@ keymap = {
     'new window': Key('cmd-n'),
     '(next window | gibby)': Key('cmd-`'),
     '(last window | shibby)': Key('cmd-shift-`'),
-    '(next tab | goneck)': Key('ctrl-tab'),
-    '(last tab | gopreev)': Key('ctrl-shift-tab'),
     'next space': Key('cmd-alt-ctrl-right'),
     'last space': Key('cmd-alt-ctrl-left'),
 
@@ -24,7 +22,7 @@ keymap = {
     # '(new tab | peach)': Key('cmd-t'),
 
     # deleting
-    'snipline': Key('cmd-right cmd-backspace'),
+    '(snipline | delete line)': Key('cmd-right cmd-backspace'),
     'steffi': Key('alt-ctrl-backspace'),
     'stippy': Key('alt-ctrl-delete'),
     'carmex': Key('alt-backspace'),
@@ -69,6 +67,3 @@ keymap = {
 }
 
 ctx.keymap(keymap)
-
-
-def unload(): ctx.unload()

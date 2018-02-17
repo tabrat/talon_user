@@ -3,7 +3,7 @@ from talon.voice import Key, Context
 ctx = Context('iterm', bundle='com.googlecode.iterm2')
 
 keymap = {
-    'full-screen': Key('cmd-shift-enter'),
+    '[toggle] full-screen': Key('cmd-shift-enter'),
     'exit session': [Key('ctrl-c'), 'exit\n'],
     'broadcaster': Key('cmd-alt-i'),
     'clear session': [Key('ctrl-c'), 'clear\n'],
@@ -12,6 +12,3 @@ keymap = {
 }
 
 ctx.keymap(keymap)
-
-
-def unload(): ctx.unload()

@@ -71,7 +71,7 @@ def previous_track(m):
 def set_volume(m):
     volume = text_to_number(m)
     if volume == -1:
-        return
+        return  # Give notification when that is supported
 
     volume = str(volume)
     script = '''tell app "Spotify" to set sound volume to ''' + volume
@@ -98,6 +98,3 @@ keymap = {
 
 
 ctx.keymap(keymap)
-
-
-def unload(): ctx.unload()

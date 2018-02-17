@@ -1,6 +1,6 @@
 from talon.voice import Context, Key
 
-languages = ['.php', '.py', '.java']
+languages = ['.php', '.py', '.java', '.yml', '.json']
 bundles = ['com.postmanlabs.mac']
 
 ctx = Context('code', func=lambda app, win:
@@ -63,6 +63,3 @@ keymap = {
 }
 
 ctx.keymap(keymap)
-
-
-def unload(): ctx.unload()

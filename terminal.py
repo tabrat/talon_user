@@ -9,10 +9,11 @@ keymap = {
     'cd': 'cd ',
     '(ls | run ellis | run alice)': 'ls\n',
     'run make (durr | dear)': 'mkdir ',
-    '[go] parent': 'cd ..\n',
+    '[go] parent': 'cd ..; ls\n',
     'go back': 'cd -\n',
     'run jet': 'git ',
     'run jet clone': 'git clone ',
+    'run jet checkout': 'git checkout ',
     'run jet diff': 'git diff ',
     'run jet commit': 'git commit ',
     'run jet push': 'git push ',
@@ -26,6 +27,3 @@ keymap = {
 }
 
 ctx.keymap(keymap)
-
-
-def unload(): ctx.unload()
