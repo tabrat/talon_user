@@ -1,18 +1,19 @@
 from talon.voice import Key, press, Str, Context
 
-ctx = Context('generic_editor') # , bundle='com.microsoft.VSCode')
+ctx = Context('generic_editor')  # , bundle='com.microsoft.VSCode')
 
 numeral_map = dict((str(n), n) for n in range(0, 20))
 for n in [20, 30, 40, 50, 60, 70, 80, 90]:
     numeral_map[str(n)] = n
-numeral_map["oh"] = 0 # synonym for zero
+numeral_map["oh"] = 0  # synonym for zero
 
-numerals          = ' (' + ' | '.join(sorted(numeral_map.keys())) + ')+'
+numerals = ' (' + ' | '.join(sorted(numeral_map.keys())) + ')+'
 optional_numerals = ' (' + ' | '.join(sorted(numeral_map.keys())) + ')*'
 
-def text_to_number(words):
 
-    tmp = [str(s).lower() for s in words]
+def text_to_number(m):
+
+    tmp = [str(s).lower() for s in m.dgndictation[0]._words]
     words = [parse_word(word) for word in tmp]
 
     result = 0
@@ -31,20 +32,25 @@ def parse_word(word):
     word = word.lstrip('\\').split('\\', 1)[0]
     return word
 
+
 def jump_to_bol(m):
     line = text_to_number(m)
     press('ctrl-g')
     Str(str(line))(None)
     press('enter')
 
+
 def jump_to_end_of_line():
     press('cmd-right')
+
 
 def jump_to_beginning_of_text():
     press('cmd-left')
 
+
 def jump_to_nearly_end_of_line():
     press('left')
+
 
 def jump_to_bol_and(then):
     def fn(m):
@@ -55,6 +61,7 @@ def jump_to_bol_and(then):
             press('cmd-left')
         then()
     return fn
+
 
 def jump_to_eol_and(then):
     def fn(m):
@@ -70,7 +77,8 @@ def toggle_comments():
     # press('cmd-shift-7')
 
     # does not work in VSCode, see https://github.com/talonvoice/talon/issues/3
-   press('cmd-/')
+    press('cmd-/')
+
 
 def snipline():
     press('shift-cmd-right')
@@ -79,10 +87,12 @@ def snipline():
     press('ctrl-a')
     press('cmd-left')
 
+
 def find_next(m):
     press('cmd-f')
     Str(str(m.dgndictation[0]._words[0]))(None)
     press('escape')
+
 
 def find_previous(m):
     press('left')
